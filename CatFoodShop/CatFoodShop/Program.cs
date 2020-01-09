@@ -19,7 +19,8 @@ namespace CatFoodShop
         {
             Console.WriteLine("Welcome to the cat food store!");
             string entry = Ask("How many cans are you ordering?");
-            Console.Write("You entered " + entry + " cans");
+            Console.Write($"You entered {entry} cans");
+            
         }
     }
 }
