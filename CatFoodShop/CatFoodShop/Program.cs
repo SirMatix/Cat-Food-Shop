@@ -17,18 +17,20 @@ namespace CatFoodShop
 
         static double Price(int quantity)
         {
-            if (quantity < 50)
+            double pricePerUnit;
+            if (quantity >= 100)
             {
-                return quantity * 2;
+                pricePerUnit = 1.5;
             }
-            else if (quantity >= 50 && quantity < 100)
+            else if (quantity >= 50)
             {
-                return quantity * 1.75;
+                pricePerUnit = 1.75;
             }
             else
             {
-                return quantity * 1.5;
+                pricePerUnit = 2;
             }
+            return quantity * pricePerUnit;
 
         }
 
