@@ -10,7 +10,7 @@ namespace CatFoodShop
     {
         static string Ask(string message)
         {
-            Console.Write(message);
+            Console.Write(message + " ");
             return Console.ReadLine();
 
         }
@@ -19,7 +19,7 @@ namespace CatFoodShop
         {
             Console.WriteLine("Welcome to the cat food store!");
             string entry = Ask("How many cans are you ordering?");
-            Console.Write(entry);
+            Console.Write("You entered " + entry + " cans");
         }
     }
 }
