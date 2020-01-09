@@ -36,13 +36,27 @@ namespace CatFoodShop
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the cat food store!");
-            string entry = Ask("How many cans are you ordering?");
-            int number = int.Parse(entry);
-            double total = Price(number);
-            Console.WriteLine($"For {number} cans, yout total is: ${total}");
-            Console.Write("Press enter to close...");
-            Console.ReadLine();
+            bool decision = true;
+            while (decision == true)
+            {
+                Console.WriteLine("Welcome to the cat food store!");
+                string entry = Ask("How many cans are you ordering?");
+                int number = int.Parse(entry);
+                double total = Price(number);
+                Console.WriteLine($"For {number} cans, yout total is: ${total}");
+                Console.Write("Do you want to buy more cans? y/n ");
+                string answer = Console.ReadLine();
+                answer.ToLower();
+                if (answer == "y" || answer == "yes")
+                {
+                    decision = true;
+                }
+                else
+                {
+                    decision = false;
+                }
+            }
+            
             
         }
     }
