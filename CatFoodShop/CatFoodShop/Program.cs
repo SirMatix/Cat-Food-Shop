@@ -15,14 +15,31 @@ namespace CatFoodShop
 
         }
 
+        static double Price(int quantity)
+        {
+            if (quantity < 50)
+            {
+                return quantity * 2;
+            }
+            else if (quantity >= 50 && quantity < 100)
+            {
+                return quantity * 1.75;
+            }
+            else
+            {
+                return quantity * 1.5;
+            }
+
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the cat food store!");
             string entry = Ask("How many cans are you ordering?");
-            Console.Write($"You entered {entry} cans");
             int number = int.Parse(entry);
-            Console.WriteLine($"For {entry} cans, yout total is: ${number * 2}");
-            Console.Write("Press any key to close...");
+            double total = Price(number);
+            Console.WriteLine($"For {number} cans, yout total is: ${total}");
+            Console.Write("Press enter to close...");
             Console.ReadLine();
             
         }
